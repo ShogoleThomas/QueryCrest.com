@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>South African University & TVET College Application Guide</title>
+
+	<!-- SEO meta tags -->
+	<meta name="description" content="Step-by-step university and TVET college application guides in South Africa. Learn how to apply, upload documents, and track your admission status.">
+	<meta name="keywords" content="South Africa university application, TVET colleges, UNISA application, UKZN application, TUT application, student application guide">
+	<meta name="author" content="QueryCrest">
+
+	<!-- Open Graph / Social Media -->
+	<meta property="og:title" content="South African University & TVET College Application Guide">
+	<meta property="og:description" content="Follow our step-by-step guides for university and TVET college applications in South Africa. Learn how to apply, upload documents, and track your admission status.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.QueryCrest.com/apply.html">
+	<meta property="og:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="South African University & TVET College Application Guide">
+	<meta name="twitter:description" content="Step-by-step guides to help you apply to universities and TVET colleges in South Africa. Upload documents and track your admission status easily.">
+	<meta name="twitter:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+
+	<!-- TikTok (uses Open Graph tags) -->
+	<meta property="og:title" content="South African University & TVET College Application Guide">
+	<meta property="og:description" content="Step-by-step application guides for universities and TVET colleges in South Africa. Learn how to apply, submit documents, and track your admission status.">
+	<meta property="og:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+	<meta property="og:url" content="https://www.QueryCrest.com/apply.html">
+	<meta property="og:type" content="website">
+
+
+  <link rel="stylesheet" href="../CSS Files/indexstyles.css" />
+  <style>
+    .video-container,
+    .step-guide,
+    .image-guide,
+    .institution {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    .step {
+      margin-bottom: 2rem;
+    }
+    .step img {
+      width: 100%;
+      max-width: 350px;
+      height: 200px;
+      object-fit: cover;
+      margin: 0.5rem;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .step-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+    }
+
+    /* Modal full image preview */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+	
+	
+	
+	/* Button styling */
+  /* Button styling */
+.applyBtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 35px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.applyBtn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Modal overlay */
+.applyModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.applyModal .modal-content {
+  background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+  padding: 35px;
+  border-radius: 15px;
+  width: 380px;
+  text-align: left;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+  font-family: Arial, sans-serif;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+.applyModal h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.applyModal p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.applyModal label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.applyModal input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.applyModal button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.applyModal .submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 10px;
+}
+
+.applyModal .submit-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.applyModal .cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.applyModal .cancel-btn:hover {
+  background-color: #da190b;
+  transform: scale(1.05);
+}
+
+/* Responsive modal for mobile */
+@media (max-width: 450px) {
+  .applyModal .modal-content {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .applyBtn {
+    width: 90%;
+    font-size: 20px;
+    padding: 15px 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>How to Apply to SA Universities & Colleges</h1>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="main-nav">
+       <a href="../index.html">Home</a>
+        <a href="privacy.html">Privacy-Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="about.html">About-Us</a>
+        <a href="Prospectus.html">Prospectus</a>
+		<a href="FAQ.html">FAQ</a>
+    </nav>
+  </header>
+	<!-- Disclaimer box -->
+	<div class="disclaimer-inline">
+	  <p><strong>Disclaimer:</strong> The information provided may be outdated or inaccurate. Please always verify details directly with the institution.</p>
+	</div>
+  <div class="container">
+    <div class="main-content">
+      <h2>Select Institution</h2>
+      <label for="institution-select">Choose an Institution:</label>
+      <select id="institution-select" onchange="switchInstitution()">
+        <option value="unisa">University Of South Africa(UNISA)</option>
+        <option value="ukzn">University of KwaZulu-Natal (UKZN)</option>
+        <option value="tut">Tshwane University Of Technology (TUT)</option>
+        <option value="uj">University of Johannesburg (UJ)</option>
+        <option value="tsc">Tshwane South TVET College</option>
+        <option value="swgc">South West Gauteng TVET College</option>
+        <option value="cjc">Central Johannesburg TVET College</option>
+        <option value="flavius">Flavius Mareka TVET College</option>
+      </select>
+
+      <!-- UNISA Section -->
+      <div class="institution unisa active">
+        <h3>UNISA - How to Apply</h3>
+        
+        <div class="step-guide active">
+          <h4>Step-by-Step Instructions for UNISA</h4>
+          <div class="step">
+            <h5>Step 1: Visit UNISA Website</h5>
+            <p>a. Go to <a href="https://www.unisa.ac.za/sites/corporate/default/Apply-for-admission" target="_blank">www.unisa.ac.za</a>, You will see a button "First-time Unisa Applicants" within the website and click it</p>
+			<p>b. Check application dead lines: Applications opened <b>16 April 2025</b> and will close <b>10 October 2025</b></p>
+			<p>c. <b>Download the Prospectus & Choose Your Programme</b><a href="../Prospectus/unisa.pdf"> Click here to download the Prospectus</a> or <a href="https://www.unisa.ac.za/sites/corporate/default/Apply-for-admission">visit unisa website</a></p>
+			<br/>
+			<h3>Have the following information ready before you Start Step 1</h3>
+			<ul>
+				<li>Full Names</li>
+				<li>Identification Number(ID) - Get this from your Identity Document</li>
+				<li>Working Gmail Address</li>
+				<li>A Strong Password For Your Profile</li>
+				<li>Postal/Physical Address </li>
+				<li>Your Matric results/Grade 11 exam final results</li>
+			</ul>
+			<p><b>Refer to the images below if you do not understand AND click step 4 to start your application.</b></p>
+            <div class="step-images">
+              <img src="../images/unisa1.png" alt="TUT Website" onclick="openModal(this.src)" />
+              <img src="../images/unisa2.png" alt="Apply Now button" onclick="openModal(this.src)" />
+			  <img src="../images/unisa3.png" alt="Apply Now button" onclick="openModal(this.src)" />
+            </div>
+          </div>
+          <div class="step">
+            <h5>Step 2: Start your Unisa Application process.</h5>
+            <p></p>
+			<p>a. In the first modal, pick Undergraduate, and continue to the next step.</p>
+			<p>b. Now choose No when you are asked if you have a student number, because you do not yet have a student number, or if you do click yes and follow on screen prompts.</p>
+			<p>c. Next step is to enter your personal Info, this includes your surname/last name, first /and middle name along with your date of birth and continue to the next step.</p>
+            <div class="step-images">
+			  <img src="../images/unisa7.png" alt="TUT Website" onclick="openModal(this.src)" />
+              <img src="../images/unisa8.png" alt="Apply Now button" onclick="openModal(this.src)" />
+              <img src="../images/unisa9.png" alt="New Applicant page" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+
+		 
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+          <div class="step">
+            <h5>Step 3: Admission Calculation to check if you qualify.</h5>
+            <p>a. On this step choose the option that is more applicable to you, if you already finished matric choose "Passed only matric/grade 12 exams" or "I am currently in school doing grade 12" if you only have your grade 11 results and click continue.</p>
+			<p>b. Upon choosing "Passed only matric/grade 12 exams" in the previous step, now enter your ID(Identification Number), only for South African Students.</p>
+            <div class="step-images">
+              <img src="../images/unisa10.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa11.png" alt="Program selection" onclick="openModal(this.src)" />
+              
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 4: Admission Calculation to check if you qualify.</h5>
+            <p>a. This step will check your APS score to determine whether you qualify for a certain qualification or not.</p>
+			<p>b. Now choose NSC entry level Bachelor's Degree and continue.</p>
+			<p>c. Now enter your matriculation subjects and results, choose from the drop down options.</p>
+            <div class="step-images">
+              <img src="../images/unisa12.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa13.png" alt="Program selection" onclick="openModal(this.src)" />
+              
+            </div>
+          </div>
+		  
+		   <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  
+		  <div class="step">
+            <h5>Step 5: Choose the qualification you want to study for.</h5>
+            <p>a. You will enter the details of the qualification you want to study for, you must choose at least 1-3.</p>
+			<p>b.Choose the 3 qualifications and continue to confirm if they are correct, if they are not click the "Back" button to make changes, but if they are correct you can continue to the next steps.</p>
+            <div class="step-images">
+              <img src="../images/unisa14.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa15.png" alt="Program selection" onclick="openModal(this.src)" />
+              <img src="../images/unisa16.png" alt="Upload section" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 6: Add more of your personal details.</h5>
+            <p>a. In the previous steps you have included your personal details but you were not done, now you need to enter your initials, title, gender, ID, and check for disability.</p>
+			<p>b. Upon continuing you will have to add your cell phone number and relevent stuff/details.</p>
+            <div class="step-images">
+              <img src="../images/unisa17.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa18.png" alt="Program selection" onclick="openModal(this.src)" />
+              <img src="../images/unisa19.png" alt="Upload section" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+		   <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <div class="step">
+            <h5>Step 7: Postal/Physical Address.</h5>
+            <p>a. Continue to add your address, home language and proceed to the next steps.</p>
+
+            <div class="step-images">
+              <img src="../images/unisa20.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa21.png" alt="Program selection" onclick="openModal(this.src)" />
+              
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 8: School Leaving Information.</h5>
+            <p>a. Please choose the options that are most relevent to you in this step and confirm if you have "Acess to study online throough laptop/desktop" and if you  have "Access to data" and continue to the next steps.</p>
+
+            <div class="step-images">
+              <img src="../images/unisa22.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa23.png" alt="Program selection" onclick="openModal(this.src)" />
+              
+            </div>
+          </div>
+		  
+		   <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <div class="step">
+            <h5>Step 9: Confirm your qualification details, and agree to the terms</h5>
+            <p>a. Now we have to come to the end or rather 2 steps from the end to completing your application.</p>
+			<p>b. Now once again you have the opportunity to check if you have picked the right courses for yourself, if there are no mistakes, read and agree to the terms.</p>
+			<p>c. Now this is the step you have been waiting for, click the submit button to submit your application.</b>
+			<p><b>d. NOTE: You are not done with your application as yet, follow the next steps below.</b></p>
+            <div class="step-images">
+              <img src="../images/unisa24.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa25.png" alt="Program selection" onclick="openModal(this.src)" />
+         
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 10: Submit your documents And confirm you Apllication details.</h5>
+            <p>a. Now we have come to the end of your application. All you have to do is submit you ID(Identity Document) and your Matric results/Grade 11 results.</p>
+			<p>b. After you choose your documents don't forget to click upload to make sure they are submitted.</p>
+			<p>c. Once again you are provided with the opportunity to confirm your details, so double check and continue</p>
+			<p>Don't also forget to pay your application fee of <b>R150</b>, if you fail to pay this fee your application will not be processed. The good news is that you do not have to pay immediatly, you can always opt to pay later.</p>
+			<p>Upon completing all the necessary steps you will now receive an email entailing your your application details along with your student number.</p>
+            <div class="step-images">
+              <img src="../images/unisa26.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa27.png" alt="Program selection" onclick="openModal(this.src)" />
+              <img src="../images/unisa28.png" alt="Program selection" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+		   <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <div class="step">
+            <h5>Step 11: Check you admision status and pay application fee.</h5>
+            <p>a. You are done with your application, now we need to polish up a few things.</p>
+			<p>b. <a href="https://myadmin.unisa.ac.za/unisa-studentstatus/studentStatus.do?act=applyLogin">Click this link</a> to pay the application fee if you haven't paid and check your admission status.</p>
+			<p>c. Upon clicking the link you will be prompted to enter your student number(Get this from the email you received), and next enter your full names and date of birth and you will access the portal.</p>
+			
+            <div class="step-images">
+              <img src="../images/unisa30.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/unisa31.png" alt="Program selection" onclick="openModal(this.src)" />
+              <img src="../images/unisa32.png" alt="Program selection" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+	
+		  
+        </div>
+		
+		<div class="video-container active">
+          <h4>Application Video - We’re currently getting the video ready. Thank you for your patience.</h4>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_TUT" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- UKZN Section (example placeholder) -->
+      <div class="institution ukzn">
+        <h3>University Of KwaZulu-Natal(UKZN) - How to Apply</h3>
+        
+        <div class="step-guide active">
+          <h4>Step-by-Step Instructions for UKZN</h4>
+          <div class="step">
+            <h5>Step 1: Visit UKZN Website</h5>
+            <p>Go to <a href="https://ww1.applications.ukzn.ac.za/applications/online-applications/" target="_blank">ww1.applications.ukzn.ac.za</a> and navigate to the 'Apply Now' section at the bottom of the website.</p>
+            <div class="step-images">
+              <img src="../images/UKZN1.2.png" alt="TUT Website" onclick="openModal(this.src)" />
+              <img src="../images/UKZN1.1.png" alt="Apply Now button" onclick="openModal(this.src)" />
+            </div>
+          </div>
+          <div class="step">
+            <h5>Step 2: Start with your Application</h5>
+            <p>Fill in the form with relevant personal information and click and continue.</p>
+			<p>Do not enter student card if this is your first time applying.</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+			  <img src="../images/UKZN1.png" alt="TUT Website" onclick="openModal(this.src)" />
+              
+            </div>
+          </div>
+		  
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+          <div class="step">
+            <h5>Step 3: Fill in your Contact Information and Your Postal/physical address</h5>
+            <p>Complete your personal, academic and program choice information as requested on the application form and continue to the next stage.</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN2.png" alt="Application form" onclick="openModal(this.src)" />
+            
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 4: Now fill in your parent/guardian Information</h5>
+            <p>This stage requires you to have your guardian peronal/contact information along with thier postal/physical address</p>
+			<p>Now fill in their details and contine to the next stage</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN3.png" alt="Application form" onclick="openModal(this.src)" />
+ 
+            </div>
+          </div>
+		  
+		  
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <div class="step">
+            <h5>Step 5: Now you have to choose the qualification you want to apply for</h5>
+            <p>Read the Instructions as provided by the page to ensure smooth application process</p>
+			<p>There's a check box at the bottom askng if you want to apply for University Residence, Check it if you want University Residence.</p>
+			<p>Don't worry if you missed it you can still apply for Residence at a later stage.</p>
+			<p>Now Choose the qualification you want to apply for, choose at least one.</p>
+			<p>Choose period of study as 1st Year if this is your first time applying. Refer to the images below for guidence.</p>
+			<p>Now you are done with Step 5 let's move on to step 6</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN4.png" alt="Application form" onclick="openModal(this.src)" />
+			  <img src="../images/UKZN5.png" alt="Application form" onclick="openModal(this.src)" />
+			  <img src="../images/UKZN6.png" alt="Application form" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+		  
+		  <div class="step">
+            <h5>Step 6: Residence Application</h5>
+            <p>Because in the previous step you checked the box for Residence application now we apply for it, But if you forgot to check it don't worry you can still do this later.</p>
+			<p>Choose Academic year(The year you want to apply for Residence) and the semester which you would like to stay at the residence. If you are a first year choose <b>Semester 1</b></p>
+			<p>Select the building you would like to saty at, you will find a few options to choose from, select the one that applieas to you.</p>
+			<p>Click add application and continue to the next step</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN7.png" alt="Application form" onclick="openModal(this.src)" />
+              <img src="../images/UKZN8.png" alt="Application form" onclick="openModal(this.src)" />
+            </div>
+        </div>
+	  
+		<!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+	  
+	  
+		<div class="step">
+            <h5>Step 7: Confirm biographical and application detail.</h5>
+            <p>Confirm if the information you have entered is correct so far if it isn't go back to make changes, if it is continue to the next step.</p>
+			<p>Now fill in their details and contine to the next stage</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/ukzn9.png" alt="Application form" onclick="openModal(this.src)" />
+			  <img src="../images/UKZN10.png" alt="Application form" onclick="openModal(this.src)" />
+			  
+            </div>
+          </div>
+		  
+		  <div class="step">
+            <h5>Step 8: Upload Supporting documents</h5>
+            <p>If you studied at another Institution please indicate so at the top(refer to the image below)</p>
+			<p>There is a link at the bottom for uploading documents, please refer to it and upload supporting documents., this will include(ID document, Matric Results/Grade 11), and after uploading the documents click <b>complete process</b> button</p>
+			<p>Congratualtions, you are now done with your application. All that's left to do now, is <b>pay an application fee of R210 for UKZN to process your application.</b></p>
+			<p>Note that should you fail to pay the application fee, your application will be REJECTED.</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN12.png" alt="Application form" onclick="openModal(this.src)" />
+			  <img src="../images/UKZN13.png" alt="Application form" onclick="openModal(this.src)" />
+			  
+            </div>
+          </div>
+		  
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <div class="step">
+            <h5>Step 9: lOG INTO STUDENT CENTRAL</h5>
+			<p>Now that the hard work is over, log into you student central account to confirm you have done everything required to do. </p>
+			<p>But before you log into the system, you must resart your Password first,to do this enter your student number and click forgot pin, you will receive an email containing your pin and now you can officailly log in and upload any missing documents or apply for Residence if you haven't.</p>
+			<p>Get used to the Interface and familiarise yourself with it, this is where you are going to check your application status. But you will also receive an official email communicating your results.</p>
+			<p><b>Please refer to the images below to help you with this step</b><p>
+            <div class="step-images">
+              <img src="../images/UKZN14.png" alt="Application form" onclick="openModal(this.src)" />
+			  <img src="../images/UKZN15.png" alt="Application form" onclick="openModal(this.src)" />
+            </div>
+          </div>
+		  
+		  
+		  
+        </div>
+		<div class="video-container active">
+          <h4>Application Video - We’re currently getting the video ready. Thank you for your patience.</h4>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_TUT" frameborder="0" allowfullscreen></iframe>
+        </div>
+		
+      </div>
+
+      
+	  
+	  
+	  
+	  <!-- TUT Section (example placeholder) -->
+      <div class="institution tut">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  
+		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  <!-- UKZN Section (example placeholder) -->
+      <div class="institution uj">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  <!-- Tshwane South TVET College Section (example placeholder) -->
+      <div class="institution tsc">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  <!-- South West Gauteng College Section (example placeholder) -->
+      <div class="institution swgc">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  <!-- Central Johannesburg TVET College Section (example placeholder) -->
+      <div class="institution cjc">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  
+	  <!-- Flavius Mareka TVET College Section (example placeholder) -->
+      <div class="institution flavius">
+            
+        <div class="step-guide active">
+          <h3>Apply to University with Our Support</h3>
+    		<p>We understand that you need help applying to university, and we are here to assist you completely for free. <strong>Click the Apply for Universit</strong>y button below, and we'll guide you through the process!</p>
+		  <!-- Inline Ad -->
+		  <!--<div class="ad-section">
+			[ Inline Ad - Your AdSense Code Here ]
+		  </div>-->
+		  		  <!-- Button to open the modal -->
+			<button class="applyBtn">Apply for University</button>
+
+			<!-- Modal -->
+			<div class="applyModal">
+			  <div class="modal-content">
+				<h2>University Application Assistance</h2>
+				<p>Fill in your details below and we'll Contact You.</p>
+				<form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+				  <label for="name">Full Name:</label>
+				  <input type="text" name="name" required>
+
+				  <label for="email">Email:</label>
+				  <input type="email" name="email" required>
+
+				  <label for="phone">Phone Number:</label>
+				  <input type="text" name="phone" required>
+
+				  <label for="whatsapp">WhatsApp Number:</label>
+				  <input type="text" name="whatsapp">
+
+				  <button type="submit" class="submit-btn">Submit</button>
+				  <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+				</form>
+			  </div>
+			</div>
+          
+        </div>
+      </div>
+	  
+	  <!-- More institutions follow the same structure -->
+	  
+	  
+	  
+    </div>
+
+    <div class="sidebar">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Prospectus.html">University & College Prospectuses</a></li>
+        <li><a href="Bursaries.html">NSFAS Guide & Bursary Help</a></li>
+        <li><a href="howToApply.html">Online University Applications</a></li>
+        <li><a href="StudyAbroad.html">Study Abroad Guide</a></li>
+        <li><a href="tipsAndTutorials.html">Study Tips & Tutorials</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="about.html">About QueryCrest</a></li>
+		<li><a href="FAQ.html">FAQ</a></li>
+      </ul>
+
+      <!--<div class="ad-section" aria-label="Sidebar Ad">
+        [ Sidebar Ad - 300x250 ]
+      </div>-->
+
+      <h3>Top Articles</h3>
+      <ul>
+        <li><a href="https://quantifyyourfuture.co.za/getting-a-bursary-tips-from-bursary-students/">Getting a Bursary: Advice from South African Students</a></li>
+        <li><a href="https://www.timeshighereducation.com/counsellor/admissions-processes-and-funding/studying-south-africa-what-do-you-need-know">Studying in South Africa: Essential Student Guide</a></li>
+        <li><a href="https://bestfullyfundedscholarships.com/25-fully-funded-scholarships-in-south-africa/">25 Fully Funded Scholarships in South Africa (International 2026)</a></li>
+      </ul>
+
+      <!--<div class="ad-section" aria-label="Sidebar Ad">
+        [ Sidebar Ad - 300x250 ]
+      </div>-->
+    </div>
+  </div>
+
+  <!-- Modal for full image view -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage" />
+  </div>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-nav").classList.toggle("active");
+    }
+
+    function switchInstitution() {
+      const value = document.getElementById("institution-select").value;
+      document.querySelectorAll(".institution").forEach(el => {
+        el.classList.remove("active");
+      });
+      const selected = document.querySelector(".institution." + value);
+      if (selected) selected.classList.add("active");
+    }
+
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modal.style.display = "flex";
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+  
+  <script>
+  // Open modal
+document.querySelectorAll(".applyBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const modal = btn.nextElementSibling; // modal is right after button
+    modal.style.display = "flex";
+  });
+});
+
+// Close modal
+document.querySelectorAll(".cancel-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const modal = btn.closest(".applyModal");
+    modal.style.display = "none";
+  });
+});
+
+// Click outside to close
+window.addEventListener("click", (e) => {
+  document.querySelectorAll(".applyModal").forEach(modal => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+});
+
+// Clear input fields on submit
+document.querySelectorAll(".applyForm").forEach(form => {
+  form.addEventListener("submit", (e) => {
+    setTimeout(() => form.reset(), 100); // allow Formspree to process
+    const modal = form.closest(".applyModal");
+    modal.style.display = "none";
+    alert("Your application has been submitted! We will contact you soon.");
+  });
+});
+
+</script>
+
+  
+</body>
+</html>

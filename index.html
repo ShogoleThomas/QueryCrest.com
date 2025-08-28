@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for SEO and responsiveness -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Primary Meta Tags -->
+	<title>QueryCrest – Free Prospectuses, Bursaries, Study Tips & Application Help for South African Students</title>
+	<meta name="title" content="QueryCrest – Free Prospectuses, Bursaries, Study Tips & Application Help for South African Students">
+	<meta name="description" content="QueryCrest is South Africa’s ultimate student resource hub. Access free university and college prospectuses,
+	NSFAS 2025 guides, bursary and scholarship resources, step-by-step online application tutorials, study abroad tips, expert study hacks, exam 
+	strategies, and practical learning resources. Succeed academically with our tailored support for South African students.">
+	
+	<meta name="keywords" content="QueryCrest, student portal South Africa, South African university guides, South African college prospectuses, 
+	university applications, college applications, bursaries South Africa, scholarships South Africa, NSFAS 2025 application, study funding 
+	South Africa, student grants, study abroad South Africa, international study tips, overseas study guides, study hacks, exam strategies,
+	study tips for students, online learning resources, academic tutorials, student support, free student guides, application forms, university 
+	requirements, student success strategies, apply for university, download prospectus, find bursaries, get study tips, learn how to apply, 
+	South African students">
+	<meta name="author" content="QueryCrest">
+	<meta name="robots" content="index, follow">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.QueryCrest.com/">
+	<meta property="og:title" content="QueryCrest – Free Prospectuses, Bursaries, Study Tips & Application Help for South African Students">
+	<meta property="og:description" content="Access free university and college prospectuses, NSFAS guides, bursary and scholarship resources, step-by-step online application tutorials, study abroad tips, and expert study strategies on QueryCrest.">
+	<meta property="og:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://www.QueryCrest.com/">
+	<meta name="twitter:title" content="QueryCrest – Free Prospectuses, Bursaries, Study Tips & Application Help for South African Students">
+	<meta name="twitter:description" content="Your free South African student resource hub: university & college prospectuses, bursaries, scholarships, application tutorials, study abroad guides, and expert study tips.">
+	<meta name="twitter:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+
+	<!-- TikTok -->
+	<meta property="tiktok:card" content="summary_large_image">
+	<meta property="tiktok:title" content="QueryCrest – Free Prospectuses, Bursaries, Study Tips & Application Help for South African Students">
+	<meta property="tiktok:description" content="QueryCrest helps South African students access free prospectuses, bursaries, scholarships, application guides, study abroad tips, and expert study strategies.">
+	<meta property="tiktok:image" content="https://www.QueryCrest.com/assets/QueryCrest-logo.png">
+
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="CSS Files/indexstyles.css" />
+
+  <!-- Chatbot and modal inline styles -->
+  <style>
+    /* ===========================
+       Button styling for Apply modal
+       =========================== */
+    .applyBtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 35px;
+      font-size: 22px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .applyBtn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    .applyModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .applyModal .modal-content {
+      background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+      padding: 35px;
+      border-radius: 15px;
+      width: 380px;
+      text-align: left;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+      font-family: Arial, sans-serif;
+      position: relative;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    .applyModal h2 {
+      margin-top: 0;
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .applyModal p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .applyModal label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+    .applyModal input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .applyModal button {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 17px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    .applyModal .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      margin-right: 10px;
+    }
+    .applyModal .submit-btn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+    .applyModal .cancel-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .applyModal .cancel-btn:hover {
+      background-color: #da190b;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 450px) {
+      .applyModal .modal-content {
+        width: 90%;
+        padding: 25px;
+      }
+      .applyBtn {
+        width: 90%;
+        font-size: 20px;
+        padding: 15px 0;
+      }
+    }
+	
+	
+	/* ===========================
+	   Loader Spinner
+	   =========================== */
+	/* Loader styles */
+	#loader {
+	  position: fixed;
+	  left: 0; top: 0;
+	  width: 100%; height: 100%;
+	  background: #ffffff;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  z-index: 9999;
+	  flex-direction: column;
+	}
+
+	.loader-content {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  gap: 15px;
+	}
+
+	.loader-logo {
+	  width: 120px; /* adjust size as needed */
+	  height: auto;
+	}
+
+	.sliding-bars {
+	  display: flex;
+	  justify-content: center;
+	  align-items: flex-end;
+	  gap: 5px;
+	}
+
+	.sliding-bars div {
+	  width: 10px;
+	  height: 30px;
+	  background: #0077cc; /* sliding bars color */
+	  animation: slide 0.5s infinite alternate;
+	}
+
+	.sliding-bars div:nth-child(2) { animation-delay: 0.1s; }
+	.sliding-bars div:nth-child(3) { animation-delay: 0.2s; }
+	.sliding-bars div:nth-child(4) { animation-delay: 0.3s; }
+
+	@keyframes slide {
+	  to { transform: scaleY(0.3); }
+	}
+
+
+  </style>
+</head>
+
+<body>
+
+	<!-- ===========================
+       Loader
+       =========================== -->
+	  <div id="loader">
+	  <div class="loader-content">
+		<img src="images/logo.png" alt="QueryCrest Logo" class="loader-logo">
+		<div class="sliding-bars">
+		  <div></div>
+		  <div></div>
+		  <div></div>
+		  <div></div>
+		</div>
+	  </div>
+	</div>
+
+<div id="mainContent">
+  <!-- ===========================
+       Top scrolling marquee for announcements
+       =========================== -->
+  <div class="top-marquee" style="background:#ffcc00; padding:5px 0; font-weight:bold; color:#000;">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      📢 Apply for NSFAS 2025 bursaries before 31 Jan! | ✈️ New South Africa Study Abroad Guide now live! | 💡 Free student study tools & learning resources!
+    </marquee>
+  </div>
+
+  <!-- ===========================
+       Header with website title and navigation
+       =========================== -->
+  <header>
+    <h1>QueryCrest Student Portal</h1>
+    <div class="navbar">
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="HTML files/privacy.html">Privacy Policy</a>
+        <a href="HTML files/disclaimer.html">Disclaimer</a>
+        <a href="HTML files/about.html">About QueryCrest</a>
+        <a href="HTML files/Prospectus.html">Prospectuses</a>
+		<a href="HTML files/FAQ.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===========================
+       Did You Know Section
+       =========================== -->
+  <section class="did-you-know" style="background:#f0f8ff; padding:10px; margin:15px 0; border-left:5px solid #0077cc;">
+    <h3>💡 Did You Know?</h3>
+    <p id="fact-text" style="font-size:1.1em; margin:0;">
+      NSFAS also provides allowances for laptops and study materials.
+    </p>
+  </section>
+
+  <!-- ===========================
+       Quick Action Buttons
+       =========================== -->
+  <div class="quick-actions" style="display:flex; gap:10px; flex-wrap:wrap; margin:15px 0;">
+    <a href="HTML files/Bursaries.html" style="flex:1; text-align:center; background:#0077cc; color:#fff; padding:10px; text-decoration:none; border-radius:5px;">Find a Bursary in South Africa</a>
+    <a href="HTML files/StudyAbroad.html" style="flex:1; text-align:center; background:#28a745; color:#fff; padding:10px; text-decoration:none; border-radius:5px;">Complete South Africa Study Abroad Guide</a>
+    <a href="HTML files/tipsAndTutorials.html" style="flex:1; text-align:center; background:#ff6600; color:#fff; padding:10px; text-decoration:none; border-radius:5px;">Free Study Tips & Tools for Students</a>
+    <a href="HTML files/howToApply.html" style="flex:1; text-align:center; background:#FFC0CB; color:#fff; padding:10px; text-decoration:none; border-radius:5px;">Step-by-Step University Application Help</a>
+  </div>
+
+  <!-- ===========================
+       Main Container
+       =========================== -->
+  <div class="container">
+    <div class="main-content">
+      <h2>Latest Articles for South African Students</h2>
+      <p>
+        Welcome to QueryCrest — your free South African student portal for bursaries, scholarships, university applications, study tips, and study abroad guides. 
+        Learn how to apply for universities, discover funding opportunities, and boost your academic success with expert tips and tutorials.
+      </p>
+      <br/>
+
+      <ul>
+        <li><a href="https://www.zabursaries.co.za/bursaries-closing-in-october-2025/">ZABursaries – October 2025 Bursaries in South Africa</a></li>
+        <li><a href="https://www.csir.co.za/bursaries">CSIR Bursaries for 2026 Applications</a></li>
+        <li><a href="https://www.idc.co.za/bursaries/">IDC External Bursary Programme</a></li>
+        <li><a href="https://www.nac.org.za/new-call-for-international-bursaries-applications-2025/">NAC International Bursary Applications 2025</a></li>
+        <li><a href="https://www.ciee.org/go-abroad/college-study-abroad/blog/south-africa-study-abroad-ultimate-guide">CIEE – South Africa Study Abroad: Ultimate Guide</a></li>
+        <li><a href="https://www.goabroad.com/articles/study-abroad/tips-for-studying-abroad-in-south-africa">GoAbroad – 15 Tips for Studying Abroad in South Africa</a></li>
+        <li><a href="https://worldstrides.com/en-us/higher-ed/programs/africa/south-africa">WorldStrides – Study Abroad Programs in South Africa</a></li>
+        <li><a href="https://www.crimsonglobalacademy.school/za/blog/top-exam-strategies-for-students-succeed-in-2025-and-beyond/">Top Exam Strategies for Students</a></li>
+        <li><a href="https://www.investec.com/en_za/focus/beyond-wealth/study-tips-for-better-learning.html">10 Study Tips for Better Learning</a></li>
+        <li><a href="https://www.varsitycollege.co.za/about/articles/10-study-hacks-that-make-learning-easy">10 Hacks to Improve Your Study Sessions</a></li>
+      </ul>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; background: #eef6fb; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+        <h3 style="color: #0077cc; margin-bottom: 0.8rem;">Apply to South African Universities Easily</h3>
+        <p style="font-size: 16px; color: #333; max-width: 600px;">
+          QueryCrest helps students navigate university applications step by step, completely free of charge. 
+          Contact us at <a href="mailto:contact@QueryCrest.com">contact@QueryCrest.com</a> for assistance or follow our <a href="HTML files/howToApply.html">application tutorials</a>. 
+          Your personal information is safe and secure.
+        </p>
+        <button class="applyBtn">Apply for University</button>
+        <div class="applyModal">
+          <div class="modal-content">
+            <h2>University Application Assistance</h2>
+            <p>Fill in your details and we'll guide you through the process.</p>
+            <form class="applyForm" action="https://formspree.io/f/xdkdvygq" method="POST">
+              <label for="name">Full Name:</label>
+              <input type="text" name="name" required>
+              <label for="email">Email:</label>
+              <input type="email" name="email" required>
+              <label for="phone">Phone Number:</label>
+              <input type="text" name="phone" required>
+              <label for="whatsapp">WhatsApp Number:</label>
+              <input type="text" name="whatsapp">
+              <button type="submit" class="submit-btn">Submit</button>
+              <button type="button" class="cancel-btn">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="ad-section" aria-label="Inline Ad">
+        [ Inline Ad - Your AdSense Code Here ]
+      </div>-->
+
+      <h3 style="text-align:center; font-size:28px; color:#1a1a1a; margin-bottom:20px;">University Tips for South African Students</h3>
+
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Starting university is an exciting milestone, but it can also feel overwhelming at times. Moving into a new environment, managing your own schedule, 
+		and balancing academic and social life can be challenging. The key is to stay organized, plan ahead, and know where to find support when you need it.
+		These tips will help you navigate university life successfully.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Choose the Right Course</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Selecting the right course is one of the most important decisions you will make. Choose a field that aligns with your interests and strengths, as this
+		will keep you motivated throughout your studies. Research the curriculum, career prospects, and the workload involved so that you can make an informed
+		choice that suits your long-term goals.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Track Deadlines</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		University life comes with many deadlines, from applications and bursary submissions to class registrations and assignment due dates. Use a planner, 
+		calendar app, or reminder system to stay on top of these important dates. Missing deadlines can cause unnecessary stress and affect your academic
+		progress.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Prepare Documents Early</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Having all your essential documents ready in advance saves you a lot of hassle. This includes your ID, academic transcripts, proof of residence, and
+		any motivational letters or application forms required for bursaries or residence applications. Preparing early ensures you are always ready for
+		unexpected requests or opportunities.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Visit Campuses</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		If possible, attend open days or campus tours. Visiting campuses helps you understand the environment, facilities, and culture of the university. It
+		also gives you a chance to ask staff and current students questions directly, which can be invaluable in making your final decision.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Use Free Resources</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Most universities offer a wealth of free resources that can enhance your learning. Libraries, online courses, writing centers, and student support
+		services are there to help you succeed academically without extra cost. Take advantage of these resources to improve your skills and understanding
+		of your subjects.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Join Groups & Make Friends</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Being part of social groups, clubs, or study circles can greatly enrich your university experience. Building friendships and networking with peers
+		provides emotional support, helps you stay motivated, and makes learning more enjoyable. These connections often last well beyond your university
+		years.
+		</p>
+
+		<p style="font-size:18px; font-weight:bold; color:#1a1a1a; margin-top:15px;">Ask for Help</p>
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		Never hesitate to seek assistance when you need it. Lecturers, tutors, and counseling services are there to support you. Whether it’s academic 
+		challenges, mental health concerns, or personal guidance, asking for help early can prevent problems from becoming overwhelming.
+		</p>
+
+		<p style="font-size:16px; color:#333333; line-height:1.8; margin-bottom:15px;">
+		By following these strategies, South African students can approach university with confidence and make the most of their academic journey.
+		Planning ahead, staying organized, and building a supportive network are the keys to a successful and fulfilling university experience.
+		</p>
+
+
+      <!--<div class="ad-section" aria-label="Inline Ad">
+        [ Inline Ad - Your AdSense Code Here ]
+      </div>-->
+
+      <h3 style="text-align:center;">What Our Students Say</h3>
+	  
+      <div class="testimonial-slider">
+        <div class="testimonial-loading" style="display:none; text-align:center; font-style: italic; color:#777; margin-bottom: 10px;">Loading comment...</div>
+        <div class="testimonial-slide active">
+          <p>"QueryCrest helped me find the perfect bursary and made the application process simple. Highly recommend!"</p>
+          <span>- Sipho M.</span>
+        </div>
+        <div class="testimonial-slide">
+          <p>"The study tips and guides are a lifesaver. I feel more confident starting university now."</p>
+          <span>- Lerato N.</span>
+        </div>
+        <div class="testimonial-slide">
+          <p>"Applying for universities has never been easier. Thanks QueryCrest for free support!"</p>
+          <span>- Thabo D.</span>
+        </div>
+      </div>
+	  <p style="text-align: center">For display purposes only</p>
+    </div>
+
+    <div class="sidebar">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="HTML files/Prospectus.html">University & College Prospectuses</a></li>
+        <li><a href="HTML files/Bursaries.html">NSFAS Guide & Bursary Help</a></li>
+        <li><a href="HTML files/howToApply.html">Online University Applications</a></li>
+        <li><a href="HTML files/StudyAbroad.html">Study Abroad Guide</a></li>
+        <li><a href="HTML files/tipsAndTutorials.html">Study Tips & Tutorials</a></li>
+        <li><a href="HTML files/privacy.html">Privacy Policy</a></li>
+        <li><a href="HTML files/disclaimer.html">Disclaimer</a></li>
+        <li><a href="HTML files/about.html">About QueryCrest</a></li>
+		<li><a href="HTML files/FAQ.html">FAQ</a></li>
+      </ul>
+
+      <!--<div class="ad-section" aria-label="Sidebar Ad">
+        [ Sidebar Ad - 300x250 ]
+      </div>-->
+
+      <h3>Top Articles</h3>
+      <ul>
+        <li><a href="https://quantifyyourfuture.co.za/getting-a-bursary-tips-from-bursary-students/">Getting a Bursary: Advice from South African Students</a></li>
+        <li><a href="https://www.timeshighereducation.com/counsellor/admissions-processes-and-funding/studying-south-africa-what-do-you-need-know">Studying in South Africa: Essential Student Guide</a></li>
+        <li><a href="https://bestfullyfundedscholarships.com/25-fully-funded-scholarships-in-south-africa/">25 Fully Funded Scholarships in South Africa (International 2026)</a></li>
+      </ul>
+
+      <!--<div class="ad-section" aria-label="Sidebar Ad">
+        [ Sidebar Ad - 300x250 ]
+      </div>-->
+    </div>
+  </div>
+
+  <!--<div class="popup-ad" id="popupAd">
+    <div class="popup-content">
+      <p><strong>Special Offer!</strong> Check out our student toolkits and discounts!</p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>-->
+
+  <script src="JavaScript Files/indexJS.js"></script>
+
+  <div id="chatBotBtn" title="Chat with us!">💬</div>
+  <div id="chatWindow">
+    <div id="chatHeader">
+      Chat with QueryCrest Assistant
+      <span id="chatClose">×</span>
+    </div>
+    <div id="chatMessages">
+      <div class="botMsg message"><div class="msgBubble">Hi! Ask me anything about bursaries, studying abroad, or study tips.</div></div>
+    </div>
+    <div id="chatInputContainer">
+      <input type="text" id="chatInput" placeholder="Type your question..." />
+      <button id="sendBtn">➡️</button>
+    </div>
+  </div>
+
+  <script>
+    const facts = [
+      "Funza Lushaka bursary covers all costs for teaching students.",
+      "You can apply for multiple bursaries at once in South Africa.",
+      "NSFAS also provides laptops and allowances for study materials."
+    ];
+    const factText = document.getElementById("fact-text");
+    setInterval(() => {
+      const randIndex = Math.floor(Math.random() * facts.length);
+      factText.textContent = facts[randIndex];
+    }, 8000);
+
+    // Apply Modal
+    const applyBtn = document.querySelector(".applyBtn");
+    const applyModal = document.querySelector(".applyModal");
+    const cancelBtn = document.querySelector(".cancel-btn");
+
+    applyBtn.addEventListener("click", () => applyModal.style.display = "flex");
+    cancelBtn.addEventListener("click", () => applyModal.style.display = "none");
+    window.addEventListener("click", e => { if(e.target === applyModal) applyModal.style.display = "none"; });
+  </script>
+ 
+ <script src="JavaScript Files/Chatbot.js"></script>
+  
+  
+  
+  <script>
+  window.addEventListener("load", function() {
+    const loader = document.getElementById("loader");
+    const minTime = 500; // minimum display time in ms
+    const startTime = loader.dataset.startTime ? parseInt(loader.dataset.startTime) : Date.now();
+    
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(minTime - elapsed, 0);
+
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s ease";
+      setTimeout(() => loader.style.display = "none", 500);
+    }, remaining);
+  });
+
+  // record start time when script runs
+  const loaderEl = document.getElementById("loader");
+  loaderEl.dataset.startTime = Date.now();
+</script>
+
+</div>
+</body>
+</html>
